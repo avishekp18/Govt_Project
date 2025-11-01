@@ -1,0 +1,205 @@
+@import "tailwindcss";
+
+/* --- Global & Accessibility --- */
+:root {
+  --primary-color: #0056b3;
+  --dark-text: #222;
+  --light-text: #f8f9fa;
+  --bg-color: #f4f7f6;
+  --card-bg: #ffffff;
+  --border-color: #ddd;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--dark-text);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  max-width: 1200px;
+  width: 90%;
+  margin: 20px auto;
+}
+
+/* --- Header & Footer --- */
+.app-header {
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  padding: 20px;
+  text-align: center;
+}
+.app-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.app-footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #e9ecef;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* --- Home Page --- */
+.home-page {
+  text-align: center;
+  padding: 40px 20px;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  border-radius: 8px;
+}
+.home-page h2 {
+  font-size: 1.5rem;
+}
+.home-page p {
+  font-size: 1.1rem;
+  color: #555;
+}
+.location-button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 15px 30px;
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+.home-page .or-divider {
+  margin: 20px 0;
+  font-weight: bold;
+  color: #888;
+}
+
+/* --- District Selector --- */
+.district-selector {
+  width: 100%;
+  max-width: 400px;
+}
+.district-selector select {
+  font-size: 1.2rem;
+  padding: 15px;
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid var(--border-color);
+  background-color: #fff;
+}
+
+/* --- District View Page --- */
+.district-header {
+  margin-bottom: 30px;
+}
+.district-header h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin: 0;
+}
+.district-header h2 {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 0;
+  font-weight: 400;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* --- District Card (Tap-to-play) --- */
+.district-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.district-card.playing,
+.district-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 86, 179, 0.15);
+  border-color: var(--primary-color);
+}
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+.card-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+.card-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+.card-audio {
+  font-size: 1rem;
+  color: #555;
+  font-weight: bold;
+}
+.card-audio span {
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+/* --- Chart View --- */
+.chart-container {
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+}
+.chart-container h3 {
+  margin-top: 0;
+}
+
+/* --- Global Loader / Error --- */
+.global-loader,
+.global-error {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 40px;
+  font-weight: bold;
+}
+.global-error {
+  color: #d93025;
+  background: #fdd;
+  border: 1px solid #d93025;
+  border-radius: 8px;
+}
+
+.lang-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: #fff;
+  color: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
